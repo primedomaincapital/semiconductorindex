@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHLX vs. Custom Indices: Measuring Chip Performance — semiconductorindex.com Insights</title>
+<meta name="description" content="The PHLX Semiconductor Index (SOX) dominates chip benchmarking — but custom indices are gaining ground. How they compare and when to use each.">
+<meta property="og:title" content="PHLX vs. Custom Indices: Measuring Chip Performance">
+<meta property="og:description" content="The PHLX Semiconductor Index (SOX) dominates chip benchmarking — but custom indices are gaining ground. How they compare and when to use each.">
+<meta property="og:image" content="../images/hero.jpg">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"PHLX vs. Custom Indices: Measuring Chip Performance","description":"The PHLX Semiconductor Index (SOX) dominates chip benchmarking — but custom indices are gaining ground. How they compare and when to use each.","author":{"@type":"Organization","name":"Prime Domain Capital"}}
+</script>
+<style>
+:root{--bg:#0c0d10;--bg2:#14161b;--cu:#c87533;--cu2:#e8a05c;--si:#d7dce3;--mut:#8b9099;--line:#2a2d34}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--si);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 44px;background:rgba(12,13,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em}
+nav .brand b{color:var(--cu)}
+nav a.cta{font-family:'IBM Plex Mono',monospace;background:var(--cu);color:#0c0d10;text-decoration:none;padding:11px 26px;font-size:13px;font-weight:600;transition:.25s}
+nav a.cta:hover{background:var(--cu2)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../images/hero.jpg') center/cover;opacity:.3}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 20%,transparent 65%)}
+#pulse{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;padding:130px 44px 80px;max-width:1240px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--cu);border:1px solid var(--cu);padding:9px 18px;margin-bottom:30px}
+h1{font-size:clamp(42px,6.8vw,92px);font-weight:700;line-height:1.03;letter-spacing:-.015em;max-width:880px;margin-bottom:26px}
+h1 .cu{color:var(--cu2)}
+.lede{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:660px;line-height:1.7;margin-bottom:44px}
+.buybar{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.price{font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600}
+.price span{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--mut);font-weight:400;margin-top:6px}
+.btn{font-family:'IBM Plex Mono',monospace;display:inline-block;background:var(--cu);color:#0c0d10;text-decoration:none;padding:18px 48px;font-weight:600;font-size:15px;transition:.25s}
+.btn:hover{background:var(--cu2);transform:translateY(-2px)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
+.ticker span{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mut);letter-spacing:.08em;padding:0 34px}
+.ticker b{color:var(--cu2)}
+section{padding:104px 44px;max-width:1240px;margin:0 auto}
+.k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cu);margin-bottom:20px}
+h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-bottom:24px;max-width:800px}
+.body{color:var(--mut);font-size:17.5px;line-height:1.85;max-width:700px}
+.body strong{color:var(--si)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:54px}
+.grid2 img{width:100%;border:1px solid var(--line)}
+.spec{font-family:'IBM Plex Mono',monospace;background:var(--bg2);border:1px solid var(--line);padding:34px;font-size:14px;line-height:2;color:var(--mut)}
+.spec b{color:var(--cu2)}
+.spec .row{display:flex;justify-content:space-between;border-bottom:1px dashed #2a2d34;padding:8px 0}
+.spec .row:last-child{border:none}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:60px}
+.metric{background:var(--bg2);padding:44px 28px}
+.metric .v{font-family:'IBM Plex Mono',monospace;font-size:40px;color:var(--cu2);font-weight:600}
+.metric .d{color:var(--mut);font-size:13.5px;margin-top:12px;line-height:1.6}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.shots img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line);transition:.5s;filter:saturate(.85)}
+.shots img:hover{filter:saturate(1.15);transform:scale(1.02)}
+.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.target{border:1px solid var(--line);padding:38px 30px;background:var(--bg2);transition:.3s}
+.target:hover{border-color:var(--cu)}
+.target h3{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--cu2);margin-bottom:14px}
+.target p{color:var(--mut);font-size:14.5px;line-height:1.75}
+.close{border:1px solid var(--cu);text-align:center;padding:90px 36px;margin-top:36px;background:linear-gradient(rgba(200,117,51,.07),transparent)}
+.close .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,3.6vw,40px);color:var(--cu2);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:54px 44px;text-align:center;color:var(--mut);font-size:13.5px;font-family:'IBM Plex Mono',monospace}
+footer a{color:var(--cu2);text-decoration:none}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.grid2,.targets,.shots{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}section,.hero-inner{padding-left:22px;padding-right:22px}nav{padding:14px 18px}}
+
+
+.article-hero{padding:150px 44px 26px;max-width:1240px;margin:0 auto}
+.article-hero h1{font-size:clamp(34px,5vw,62px);font-weight:700;line-height:1.06;letter-spacing:-.015em;max-width:900px;margin-bottom:0}
+.article-hero .ameta{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--mut)}
+.article-hero .ameta b{color:var(--cu);font-weight:600}
+nav .brand a{color:inherit;text-decoration:none}
+.article-body{max-width:720px;margin:0 auto;padding:26px 44px 20px;font-size:1.05rem;line-height:1.75;color:var(--mut)}
+.article-body h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.01em;color:var(--si);margin:58px 0 22px}
+.article-body p{margin-bottom:24px}
+.article-body strong{color:var(--si)}
+.article-body .pull{font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.45;color:var(--cu2);border-left:3px solid var(--cu);padding-left:30px;margin:54px 0}
+.domain-cta{max-width:720px;margin:60px auto;padding:46px 42px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--cu);font-family:'IBM Plex Mono',monospace}
+.domain-cta p{font-size:15px;line-height:1.8;color:var(--mut);margin-bottom:26px}
+.domain-cta p b{color:var(--cu2)}
+
+@media(max-width:900px){.article-hero,.article-body{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav><div class="brand"><a href="../index.html">PDC<b>/</b>INDEX</a></div><a class="cta" href="https://www.afternic.com/domain/semiconductorindex.com">BUY $9,888</a></nav>
+
+<header class="article-hero reveal">
+<div class="k">INSIGHTS</div>
+<h1>PHLX vs. Custom Indices: Measuring Chip Performance</h1>
+<div class="ameta"><b>PHLX SEMICONDUCTOR INDEX VS CUSTOM</b> &nbsp;·&nbsp; 5 MIN READ</div>
+</header>
+
+<article class="article-body reveal">
+<p>If you manage semiconductor exposure — as a portfolio manager, an allocator, or an ETF strategist — you benchmark against the SOX. Everyone does. It's the default, the liquid choice, the index with the options market. But a growing number of sophisticated investors are asking whether the default is good enough, and building custom semiconductor benchmarks that better reflect their actual investment thesis.</p>
+<p>This isn't academic. The choice of benchmark determines measured performance, and measured performance determines capital flows. A benchmark that misrepresents the industry misallocates capital.</p>
+<h2>The SOX: What It Is and Isn't</h2>
+<p>The PHLX Semiconductor Sector Index, launched in December 1993, contains 30 US-listed semiconductor companies, weighted by modified market capitalization (with single-stock caps to prevent extreme concentration). It's calculated by Nasdaq, has a deep options market, and underpins the iShares Semiconductor ETF (SOXX, ~$15 billion in assets).</p>
+<p>Its strengths are real: liquidity, transparency, longevity, and a derivatives ecosystem that makes it tradable. For tactical traders and ETF investors, these matter enormously. You can get in and out of SOX exposure efficiently, hedge with listed options, and trust the index methodology because it's been operating for three decades.</p>
+<p>Its weaknesses, for benchmark purposes, are equally real. <strong>The 30-stock limit</strong> means the index captures only the largest US-listed names, missing the long tail of smaller chip companies where significant alpha often resides. <strong>The US-listing requirement</strong> excludes Samsung, SK Hynix (partially), Tokyo Electron, Disco, and other non-US champions that are integral to the global industry. <strong>The modified cap weighting</strong> still concentrates heavily in the largest names — NVIDIA alone has at times exceeded 15% of the index, meaning "semiconductor performance" becomes "NVIDIA performance plus noise."</p>
+<blockquote class="pull">Benchmarking a global industry with 30 US-listed stocks is like measuring the ocean with a bucket. It's the best bucket available, but it's still a bucket.</blockquote>
+<p>Most importantly, the SOX measures semiconductor <em>equities</em>, not the semiconductor <em>industry</em>. In 2022, when chip revenues hit records but the SOX fell 36%, the index wasn't wrong — it was measuring equity sentiment during a rate-hiking cycle. But an allocator trying to understand semiconductor industry performance would have been profoundly misled.</p>
+<h2>The Custom Index Landscape</h2>
+<p>Sophisticated investors are building alternatives along several dimensions:</p>
+<p><strong>Geographic completion.</strong> Adding the missing non-US names — Samsung, SK Hynix, Tokyo Electron, Infineon, STMicroelectronics, MediaTek — to create a genuinely global semiconductor benchmark. MSCI's ACWI Semiconductors sub-industry index attempts this, but its construction (as a subset of a broad equity index) doesn't optimize for semiconductor-specific representation.</p>
+<p><strong>Segment purity.</strong> Dividing the industry into investable segments: fabless designers, foundries, equipment makers, memory producers, analog/power, EDA/IP. Each segment has distinct cycle dynamics — equipment leads, memory is the most volatile, analog is the most stable. Custom indices let allocators express views on segments rather than accepting the SOX's blended exposure.</p>
+<p><strong>Equal or factor weighting.</strong> Replacing cap-weighting with equal weighting (each constituent matters equally), or with factor tilts (value, momentum, quality) applied within the semiconductor universe. Research suggests that equal-weighted semiconductor indices have outperformed cap-weighted versions over long periods — the same small-cap premium observed in broad equities, amplified by the industry's innovation dynamics.</p>
+<p><strong>Thematic refinement.</strong> Indices targeting specific semiconductor themes: AI chips (GPU, HBM memory, networking), automotive chips (MCU, power semiconductors, sensors), or China-exposed versus China-insulated supply chains. These serve the growing demand for precision thematic exposure that broad semiconductor ETFs can't provide.</p>
+<h2>When to Use Which</h2>
+<p>The practical framework:</p>
+<p><strong>Use the SOX when</strong> liquidity and tradability are paramount — tactical allocation, hedging, options strategies, or when the mandate requires a widely recognized benchmark for reporting purposes. Its limitations are acceptable when the alternative is an illiquid custom index that can't be traded efficiently.</p>
+<p><strong>Build custom when</strong> the investment thesis diverges from what the SOX measures. A fund investing in global semiconductor supply chains needs global representation. A strategy focused on equipment makers needs segment purity. An allocator measuring a manager who invests in small-cap chip stocks needs a benchmark that includes them. In each case, the custom index isn't a luxury — it's a prerequisite for honest performance measurement.</p>
+<p><strong>The hybrid approach</strong> — increasingly common among sophisticated allocators — uses the SOX for liquid tactical exposure and custom indices for strategic benchmarking. The trading book tracks SOX; the investment committee evaluates against the custom benchmark that reflects the actual mandate. This requires operational sophistication but produces the most honest performance assessment.</p>
+<h2>The Governance Challenge</h2>
+<p>Custom indices introduce a governance problem the SOX doesn't have: who sets the rules? A benchmark constructed by the same team being measured against it creates obvious conflicts. Best practice requires independent index governance — a rules-based methodology, published and transparent, with changes subject to advance notice and stakeholder consultation.</p>
+<p>This is also why the index-licensing business exists. Firms like S&amp;P, MSCI, and FTSE Russell provide not just calculation but credibility — the assurance that the benchmark wasn't reverse-engineered to make someone look good. Any custom semiconductor index intended for external reporting or product licensing needs this independence, whether through a licensed index provider or a properly governed in-house process.</p>
+<p>The SOX will remain the default — its network effects (liquidity, derivatives, ETF assets) are self-reinforcing. But the investors who think hardest about semiconductor exposure are increasingly measuring themselves against something better. In benchmarking, as in investing, the default is rarely optimal.</p>
+</article>
+
+<div class="domain-cta reveal"><p>SemiconductorIndex.com is available for acquisition by index providers, ETF issuers, and financial institutions building semiconductor benchmarks.</p><a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">Buy Now — $9,888</a></div>
+
+<section class="reveal">
+<div class="close">
+<div class="k">04 / ACQUISITION</div>
+<div class="domain">semiconductorindex.com</div>
+<p class="body" style="margin:0 auto 36px;text-align:center">Fixed Buy Now <strong>$9,888</strong>. Escrow.com secured transfer. Offered by Prime Domain Capital.<br><a href="mailto:info@primedomaincapital.com" style="color:var(--cu2)">info@primedomaincapital.com</a></p>
+<a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">BUY NOW — $9,888</a>
+</div>
+</section>
+
+<footer><p>OFFERED BY <strong>PRIME DOMAIN CAPITAL</strong> · PRIVATE HOLDER OF CATEGORY-DEFINING .COM DOMAINS</p><p style="margin-top:10px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

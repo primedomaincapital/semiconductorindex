@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semiconductor Benchmarks: Why the Industry Needs an Index — semiconductorindex.com Insights</title>
+<meta name="description" content="The $600B chip industry has no definitive benchmark. Why semiconductor indexing matters — and what a real chip index would measure.">
+<meta property="og:title" content="Semiconductor Benchmarks: Why the Industry Needs an Index">
+<meta property="og:description" content="The $600B chip industry has no definitive benchmark. Why semiconductor indexing matters — and what a real chip index would measure.">
+<meta property="og:image" content="../images/hero.jpg">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Semiconductor Benchmarks: Why the Industry Needs an Index","description":"The $600B chip industry has no definitive benchmark. Why semiconductor indexing matters — and what a real chip index would measure.","author":{"@type":"Organization","name":"Prime Domain Capital"}}
+</script>
+<style>
+:root{--bg:#0c0d10;--bg2:#14161b;--cu:#c87533;--cu2:#e8a05c;--si:#d7dce3;--mut:#8b9099;--line:#2a2d34}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--si);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 44px;background:rgba(12,13,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em}
+nav .brand b{color:var(--cu)}
+nav a.cta{font-family:'IBM Plex Mono',monospace;background:var(--cu);color:#0c0d10;text-decoration:none;padding:11px 26px;font-size:13px;font-weight:600;transition:.25s}
+nav a.cta:hover{background:var(--cu2)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../images/hero.jpg') center/cover;opacity:.3}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 20%,transparent 65%)}
+#pulse{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;padding:130px 44px 80px;max-width:1240px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--cu);border:1px solid var(--cu);padding:9px 18px;margin-bottom:30px}
+h1{font-size:clamp(42px,6.8vw,92px);font-weight:700;line-height:1.03;letter-spacing:-.015em;max-width:880px;margin-bottom:26px}
+h1 .cu{color:var(--cu2)}
+.lede{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:660px;line-height:1.7;margin-bottom:44px}
+.buybar{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.price{font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600}
+.price span{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--mut);font-weight:400;margin-top:6px}
+.btn{font-family:'IBM Plex Mono',monospace;display:inline-block;background:var(--cu);color:#0c0d10;text-decoration:none;padding:18px 48px;font-weight:600;font-size:15px;transition:.25s}
+.btn:hover{background:var(--cu2);transform:translateY(-2px)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
+.ticker span{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mut);letter-spacing:.08em;padding:0 34px}
+.ticker b{color:var(--cu2)}
+section{padding:104px 44px;max-width:1240px;margin:0 auto}
+.k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cu);margin-bottom:20px}
+h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-bottom:24px;max-width:800px}
+.body{color:var(--mut);font-size:17.5px;line-height:1.85;max-width:700px}
+.body strong{color:var(--si)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:54px}
+.grid2 img{width:100%;border:1px solid var(--line)}
+.spec{font-family:'IBM Plex Mono',monospace;background:var(--bg2);border:1px solid var(--line);padding:34px;font-size:14px;line-height:2;color:var(--mut)}
+.spec b{color:var(--cu2)}
+.spec .row{display:flex;justify-content:space-between;border-bottom:1px dashed #2a2d34;padding:8px 0}
+.spec .row:last-child{border:none}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:60px}
+.metric{background:var(--bg2);padding:44px 28px}
+.metric .v{font-family:'IBM Plex Mono',monospace;font-size:40px;color:var(--cu2);font-weight:600}
+.metric .d{color:var(--mut);font-size:13.5px;margin-top:12px;line-height:1.6}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.shots img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line);transition:.5s;filter:saturate(.85)}
+.shots img:hover{filter:saturate(1.15);transform:scale(1.02)}
+.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.target{border:1px solid var(--line);padding:38px 30px;background:var(--bg2);transition:.3s}
+.target:hover{border-color:var(--cu)}
+.target h3{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--cu2);margin-bottom:14px}
+.target p{color:var(--mut);font-size:14.5px;line-height:1.75}
+.close{border:1px solid var(--cu);text-align:center;padding:90px 36px;margin-top:36px;background:linear-gradient(rgba(200,117,51,.07),transparent)}
+.close .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,3.6vw,40px);color:var(--cu2);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:54px 44px;text-align:center;color:var(--mut);font-size:13.5px;font-family:'IBM Plex Mono',monospace}
+footer a{color:var(--cu2);text-decoration:none}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.grid2,.targets,.shots{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}section,.hero-inner{padding-left:22px;padding-right:22px}nav{padding:14px 18px}}
+
+
+.article-hero{padding:150px 44px 26px;max-width:1240px;margin:0 auto}
+.article-hero h1{font-size:clamp(34px,5vw,62px);font-weight:700;line-height:1.06;letter-spacing:-.015em;max-width:900px;margin-bottom:0}
+.article-hero .ameta{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--mut)}
+.article-hero .ameta b{color:var(--cu);font-weight:600}
+nav .brand a{color:inherit;text-decoration:none}
+.article-body{max-width:720px;margin:0 auto;padding:26px 44px 20px;font-size:1.05rem;line-height:1.75;color:var(--mut)}
+.article-body h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.01em;color:var(--si);margin:58px 0 22px}
+.article-body p{margin-bottom:24px}
+.article-body strong{color:var(--si)}
+.article-body .pull{font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.45;color:var(--cu2);border-left:3px solid var(--cu);padding-left:30px;margin:54px 0}
+.domain-cta{max-width:720px;margin:60px auto;padding:46px 42px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--cu);font-family:'IBM Plex Mono',monospace}
+.domain-cta p{font-size:15px;line-height:1.8;color:var(--mut);margin-bottom:26px}
+.domain-cta p b{color:var(--cu2)}
+
+@media(max-width:900px){.article-hero,.article-body{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav><div class="brand"><a href="../index.html">PDC<b>/</b>INDEX</a></div><a class="cta" href="https://www.afternic.com/domain/semiconductorindex.com">BUY $9,888</a></nav>
+
+<header class="article-hero reveal">
+<div class="k">INSIGHTS</div>
+<h1>Semiconductor Benchmarks: Why the Industry Needs an Index</h1>
+<div class="ameta"><b>SEMICONDUCTOR INDEX BENCHMARK</b> &nbsp;·&nbsp; 5 MIN READ</div>
+</header>
+
+<article class="article-body reveal">
+<p>Every major asset class has a definitive benchmark. Equities have the S&amp;P 500. Bonds have the Bloomberg Aggregate. Commodities have the Bloomberg Commodity Index. Real estate has NCREIF. Semiconductors — a $600+ billion industry that underpins the entire digital economy — has... the PHLX Semiconductor Sector Index (SOX), a 30-stock modified-market-cap index created in 1993, when the industry looked nothing like it does today.</p>
+<p>The SOX was fine for its era. Its era ended roughly a decade ago. The semiconductor industry's transformation — from a cyclical commodity business to the strategic substrate of AI, defense, and national industrial policy — has outgrown its benchmark. What's needed is not a tweak to the SOX but a rethinking of what a semiconductor index should measure.</p>
+<h2>What the SOX Gets Wrong</h2>
+<p>The PHLX Semiconductor Sector Index's limitations are structural, not incidental.</p>
+<p><strong>It's a US-listed equity index, not a semiconductor index.</strong> The SOX includes only companies listed on US exchanges. TSMC — the world's largest chipmaker, manufacturing an estimated 90% of the world's most advanced chips — is included via its ADR, but the index's construction reflects US market structure, not the global semiconductor value chain. Samsung, the world's largest memory producer, is absent entirely. Key Japanese equipment makers (Tokyo Electron, Disco) and European champions (ASML is included via ADR, but barely) are underrepresented relative to their industry significance.</p>
+<p><strong>It's market-cap-weighted in an industry where market cap misleads.</strong> NVIDIA's ~$3 trillion market capitalization dominates any cap-weighted chip index, but NVIDIA is a GPU designer — one segment of a vast industry. A cap-weighted index tells you how NVIDIA performs, not how semiconductors perform. The equipment makers (Applied Materials, Lam Research, ASML), the foundries (TSMC), the memory producers (Micron, SK Hynix, Samsung), the analog and power chip companies (TI, Analog Devices, Infineon) — each faces different cycles, different competitive dynamics, different geopolitical exposures. Cap-weighting collapses these distinctions into a single number dominated by the largest constituent.</p>
+<p><strong>It doesn't distinguish what matters.</strong> Is the index measuring chip demand, chip supply, or chip equity sentiment? These are different things. In 2022, semiconductor revenues grew while chip equities collapsed — demand was strong, but multiples compressed. An index that can't distinguish the industry's operating performance from its equity market performance is measuring sentiment, not semiconductors.</p>
+<h2>What a Real Semiconductor Index Would Measure</h2>
+<blockquote class="pull">The chip industry needs what the oil industry has: a benchmark that measures the commodity, not just the companies that sell it.</blockquote>
+<p>A proper semiconductor benchmark family would include multiple indices for different purposes:</p>
+<p><strong>The demand index.</strong> Tracking actual chip consumption — units shipped by category (logic, memory, analog, discrete), average selling prices, and inventory levels across the supply chain. The data exists: WSTS (World Semiconductor Trade Statistics) publishes monthly billings, SEMI tracks equipment spending, and various firms track inventory. What's missing is a standardized, investable methodology that turns this data into a benchmark. Such an index would have called the 2022-2023 inventory correction months before equity markets reacted.</p>
+<p><strong>The supply-chain index.</strong> Measuring capacity, utilization rates, and capital expenditure across foundries, OSATs (outsourced assembly and test), and equipment makers. This is the index that matters for industrial policy — the CHIPS Act's $52 billion is predicated on supply-chain analysis that currently relies on fragmented, non-standardized data.</p>
+<p><strong>The equity index, reconstructed.</strong> A semiconductor equity benchmark weighted by industry relevance rather than market cap — with proper global representation, segment diversification (fabless, foundry, equipment, memory, analog), and perhaps equal-weighting within segments. This wouldn't replace the SOX for traders (who need its liquidity and options market), but it would give allocators what they actually need: a benchmark that represents the industry.</p>
+<p><strong>The volatility index.</strong> Every major asset class has a fear gauge — VIX for equities, MOVE for bonds, OVX for oil. Semiconductors, among the most volatile major industries, have none. A semiconductor volatility index (implied volatility from SOX options exists but isn't standardized as a benchmark) would serve both hedging and sentiment-measurement purposes. Given the industry's boom-bust history, this may be the most commercially viable new index.</p>
+<h2>The Commercial Opportunity</h2>
+<p>Index creation is a business, and a lucrative one. S&amp;P, MSCI, and FTSE Russell generate billions in licensing fees from benchmarks that underpin ETFs, derivatives, and institutional mandates. A credible semiconductor index family — particularly one with global representation and segment granularity — could support ETFs, futures, and structured products serving the growing universe of chip-focused investors.</p>
+<p>The demand signals are clear. Thematic semiconductor ETFs (SOXX, SMH, PSI) collectively manage tens of billions, all tracking variations of the same inadequate benchmark. Institutional allocators building semiconductor exposure cobble together custom benchmarks because nothing standard exists. Sovereign wealth funds and government agencies making CHIPS Act-scale investment decisions lack standardized industry metrics.</p>
+<p>The barriers are data and credibility, not concept. Building the indices requires access to industry data (WSTS, SEMI, company filings), methodological rigor (transparent rules, independent governance), and the commercial relationships to drive adoption (ETF issuers, derivatives exchanges). None of this is trivial, but none of it is novel — it's exactly how every successful index was built.</p>
+<h2>Why This Matters Beyond Finance</h2>
+<p>Benchmarks shape behavior. The S&amp;P 500's dominance means trillions in capital tracks its methodology — for better and worse. A definitive semiconductor benchmark would similarly shape how capital flows into the industry: which segments attract investment, how policymakers measure supply-chain resilience, how the industry itself understands its cycles.</p>
+<p>In an era when semiconductors are treated as strategic assets — subject to export controls, industrial policy, and great-power competition — the absence of a proper benchmark isn't just a financial inconvenience. It's an information gap at the center of one of the world's most important industries. Filling it is both a commercial opportunity and, in a modest way, a public service.</p>
+</article>
+
+<div class="domain-cta reveal"><p>SemiconductorIndex.com is available for acquisition by index providers, ETF issuers, and financial institutions building semiconductor benchmarks.</p><a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">Buy Now — $9,888</a></div>
+
+<section class="reveal">
+<div class="close">
+<div class="k">04 / ACQUISITION</div>
+<div class="domain">semiconductorindex.com</div>
+<p class="body" style="margin:0 auto 36px;text-align:center">Fixed Buy Now <strong>$9,888</strong>. Escrow.com secured transfer. Offered by Prime Domain Capital.<br><a href="mailto:info@primedomaincapital.com" style="color:var(--cu2)">info@primedomaincapital.com</a></p>
+<a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">BUY NOW — $9,888</a>
+</div>
+</section>
+
+<footer><p>OFFERED BY <strong>PRIME DOMAIN CAPITAL</strong> · PRIVATE HOLDER OF CATEGORY-DEFINING .COM DOMAINS</p><p style="margin-top:10px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
