@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,16 +10,16 @@
 <meta property="og:description" content="PHLX Semiconductor Index (SOX) values, returns, and component weights from Nasdaq published index data and factsheets.">
 <meta property="og:url" content="https://semiconductorindex.com/market-data">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "Semiconductor index values \u2014 PHLX Semiconductor Index (SOX)",
+  "name": "Semiconductor index values — PHLX Semiconductor Index (SOX)",
   "url": "https://semiconductorindex.com/market-data",
   "description": "PHLX Semiconductor Index level, returns, history, and top component weights summarized from Nasdaq published index data and the SOX factsheet.",
-  "temporalCoverage": "1993/2026",
-  "dateModified": "2026-10-31",
+  "temporalCoverage": "1993-12-01/2026-11-06",
+  "dateModified": "2026-11-09",
   "creator": {
     "@type": "Organization",
     "name": "Prime Domain Capital"
@@ -32,141 +31,76 @@
 }
 </script>
 <style>
-
 :root{--bg:#0c0d10;--bg2:#14161b;--cu:#c87533;--cu2:#e8a05c;--si:#d7dce3;--mut:#8b9099;--line:#2a2d34}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--si);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden}
 .mono{font-family:'IBM Plex Mono',monospace}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 44px;background:rgba(12,13,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 44px;background:rgba(12,13,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em}
 nav .brand b{color:var(--cu)}
-nav a.cta{font-family:'IBM Plex Mono',monospace;background:var(--cu);color:#0c0d10;text-decoration:none;padding:11px 26px;font-size:13px;font-weight:600;transition:.25s}
+nav a.cta{font-family:'IBM Plex Mono',monospace;background:var(--cu);color:#0c0d10;text-decoration:none;padding:10px 18px;font-size:12px;letter-spacing:.12em}
 nav a.cta:hover{background:var(--cu2)}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,var(--bg) 20%,transparent 65%)}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,var(--bg) 20%,transparent 65%),linear-gradient(0deg,var(--bg) 0%,transparent 45%)}
 .hero-inner{position:relative;z-index:2;padding:130px 44px 80px;max-width:1240px}
-.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--cu);border:1px solid var(--cu);padding:9px 18px;margin-bottom:30px}
-h1{font-size:clamp(42px,6.8vw,92px);font-weight:700;line-height:1.03;letter-spacing:-.015em;max-width:880px;margin-bottom:26px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--cu2);border:1px solid var(--cu);padding:8px 14px;margin-bottom:26px}
+h1{font-size:clamp(42px,6.8vw,92px);font-weight:700;line-height:1.03;letter-spacing:-.015em;max-width:960px}
 h1 .cu{color:var(--cu2)}
-.lede{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:660px;line-height:1.7;margin-bottom:44px}
+.lede{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:660px;line-height:1.7;margin-bottom:36px}
 .buybar{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
 .price{font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600}
-.price span{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--mut);font-weight:400;margin-top:6px}
-.btn{font-family:'IBM Plex Mono',monospace;display:inline-block;background:var(--cu);color:#0c0d10;text-decoration:none;padding:18px 48px;font-weight:600;font-size:15px;transition:.25s}
+.price span{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--mut);margin-top:6px}
+.btn{font-family:'IBM Plex Mono',monospace;display:inline-block;background:var(--cu);color:#0c0d10;text-decoration:none;padding:16px 26px;font-size:13px;letter-spacing:.12em}
 .btn:hover{background:var(--cu2);transform:translateY(-2px)}
-.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
-.ticker span{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mut);letter-spacing:.08em;padding:0 34px}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0}
+.ticker span{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mut);letter-spacing:.08em}
 .ticker b{color:var(--cu2)}
 section{padding:128px 44px;max-width:1240px;margin:0 auto}
-.k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cu);margin-bottom:20px}
-h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-bottom:24px;max-width:800px}
-.body{color:var(--mut);font-size:17.5px;line-height:1.85;max-width:700px}
-.body strong{color:var(--si)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:54px}
-.grid2 img{width:100%;border:1px solid var(--line)}
-.spec{font-family:'IBM Plex Mono',monospace;background:var(--bg2);border:1px solid var(--line);padding:34px;font-size:14px;line-height:2;color:var(--mut)}
-.spec b{color:var(--cu2)}
-.spec .row{display:flex;justify-content:space-between;border-bottom:1px dashed #2a2d34;padding:8px 0}
-.spec .row:last-child{border:none}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:60px}
-.metric{background:var(--bg2);padding:44px 28px}
-.metric .v{font-family:'IBM Plex Mono',monospace;font-size:40px;color:var(--cu2);font-weight:600}
-.metric .d{color:var(--mut);font-size:13.5px;margin-top:12px;line-height:1.6}
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
-.shots img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line);transition:.5s;filter:saturate(.85)}
-.shots img:hover{filter:saturate(1.15);transform:scale(1.02)}
-.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
-.target{border:1px solid var(--line);padding:38px 30px;background:var(--bg2);transition:.3s}
-.target:hover{border-color:var(--cu)}
-.target h3{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--cu2);margin-bottom:14px}
-.target p{color:var(--mut);font-size:14.5px;line-height:1.75}
-.close{border:1px solid var(--cu);text-align:center;padding:90px 36px;margin-top:36px;background:linear-gradient(rgba(200,117,51,.07),transparent)}
-.close .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,3.6vw,40px);color:var(--cu2);margin-bottom:16px;word-break:break-all}
-footer{border-top:1px solid var(--line);padding:54px 44px;text-align:center;color:var(--mut);font-size:13.5px;font-family:'IBM Plex Mono',monospace}
-footer a{color:var(--cu2);text-decoration:none}
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s ease,transform .85s ease}
-.reveal.in{opacity:1;transform:none}
-@media(max-width:900px){.grid2,.targets,.shots{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}section,.hero-inner{padding-left:22px;padding-right:22px}nav{padding:14px 18px}}
-.target .read{display:inline-block;margin-top:24px;font-family:'IBM Plex Mono',monospace;color:var(--cu);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.06em;transition:.25s}
-.target .read:hover{color:var(--cu2)}
-
-
-.data-wrap{max-width:1080px;margin:0 auto;padding:120px 24px 40px}
-.data-wrap h1{overflow-wrap:break-word;word-break:break-word;line-height:1.08}
-.data-wrap h2{overflow-wrap:break-word;word-break:break-word;margin:38px 0 14px}
-.data-wrap p{line-height:1.7;margin:0 0 14px}
-.stamp{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1px solid currentColor;padding:8px 14px;margin:14px 0 22px;opacity:.9}
-.lede{font-size:19px;line-height:1.65}
-.fig{border:1px solid rgba(128,128,128,.35);padding:18px 20px;margin:0 0 14px}
-.fig b{font-size:26px;overflow-wrap:break-word}
-.fig .lbl{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.trend{display:inline-block;font-size:14px;font-weight:600;margin-top:6px}
-.trend.up{color:#2e7d32}.trend.down{color:#b3261e}.trend.flat{color:#666}
-.prior{font-size:14px;opacity:.8}
-.src{font-size:14px;margin-top:8px}
-.src a{overflow-wrap:break-word;word-break:break-word}
-table.data{width:100%;border-collapse:collapse;margin:14px 0}
-table.data th,table.data td{border:1px solid rgba(128,128,128,.35);padding:10px 12px;text-align:left;vertical-align:top;overflow-wrap:break-word}
-table.data th{font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-.note{border-left:4px solid #c87533;padding:14px 18px;margin:24px 0}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0}
-.cta-row a{display:inline-block;padding:14px 26px;min-height:44px;line-height:1.3;text-decoration:none;font-weight:600}
-.changelog{margin-top:40px;border-top:1px solid rgba(128,128,128,.35);padding-top:20px}
-.changelog li{margin:0 0 10px;line-height:1.6}
-@media(max-width:600px){
- .data-wrap{padding:100px 16px 30px}
- .fig b{font-size:22px}
- table.data,table.data tbody,table.data tr,table.data th,table.data td{display:block;width:100%}
- table.data tr{margin-bottom:12px}
- table.data th{display:none}
- table.data td{border-bottom:none}
- table.data td:last-child{border-bottom:1px solid rgba(128,128,128,.35)}
- .cta-row a{width:100%;text-align:center}
-}
-
-
-/* Phase 1 assembly 2026-10-31 */
-@media (max-width:900px){h1{font-size:clamp(44px,11vw,72px)!important}}
-
-/* Phase 1 assembly 2026-10-31 — nav solid correction */
-@media (max-width:900px){nav{background:rgb(12,13,16)!important;backdrop-filter:none!important}}
-</style>
-<style>
-/* Mobile rendering fix 2026-10-31: domain H1 lines, stacked nav, header clearance */
-@media (max-width:900px){
-main h1{overflow-wrap:normal!important;word-break:normal!important}
-nav:not(.toc){flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
-.topbar{flex-direction:column!important;align-items:flex-start!important;gap:4px!important;padding-top:16px!important;padding-bottom:16px!important;padding-left:20px!important;padding-right:20px!important}
-main{padding-top:120px!important}
-main h1{font-size:clamp(30px,8.5vw,58px)!important;line-height:1.15!important}
-}
+.k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cu);margin-bottom:18px}
+h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-bottom:22px}
+h2 .cu{color:var(--cu2)}
+.sub{color:var(--mut);font-size:17px;line-height:1.75;max-width:760px;margin-bottom:56px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--bg2);border:1px solid var(--line);padding:34px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:var(--mut);line-height:1.75;font-size:15px}
+.card .n{font-family:'IBM Plex Mono',monospace;font-size:44px;font-weight:600;margin:18px 0 8px}
+.card .n small{font-size:18px;color:var(--mut)}
+.fig{border:1px solid var(--line);background:#101216;padding:22px;margin:22px 0}
+.fig .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--mut);margin-bottom:10px}
+.fig b{font-family:'IBM Plex Mono',monospace;font-size:30px}
+.fig .trend{font-family:'IBM Plex Mono',monospace;font-size:13px}
+.fig .trend.up{color:#4ade80}
+.fig .trend.down{color:#f87171}
+.fig .trend.flat{color:var(--mut)}
+.fig .prior{color:var(--mut);font-size:13px;line-height:1.6;margin-top:10px}
+.fig .src{color:var(--mut);font-size:12px;margin-top:10px}
+.fig .src a{color:var(--cu2)}
+table{width:100%;border-collapse:collapse;margin:26px 0;font-size:15px}
+th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line)}
+th{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--mut)}
+td.num{font-family:'IBM Plex Mono',monospace;text-align:right}
+th.num{text-align:right}
+.note{color:var(--mut);font-size:14px;line-height:1.7}
+.note a{color:var(--cu2)}
+.changelog{list-style:none}
+.changelog li{padding:18px 0;border-bottom:1px solid var(--line);line-height:1.7;color:var(--mut)}
+.changelog li b{color:var(--si)}
+footer{border-top:1px solid var(--line);padding:44px;text-align:center;color:var(--mut);font-size:13px;line-height:1.8}
+footer a{color:var(--cu2)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}section{padding:84px 22px}nav{padding:16px 22px}.hero-inner{padding:110px 22px 60px}}
 </style>
 </head>
 <body>
-<nav><div class="brand">PDC<b>/</b>INDEX</div><a class="cta" href="https://www.afternic.com/domain/semiconductorindex.com">BUY $9,888</a></nav>
-<main class="data-wrap">
-<p class="stamp">Last updated: October 31, 2026</p>
-<h1>Semiconductor Index Values and Chip Stock Benchmarks</h1>
-<p class="lede">Thirty companies, one number, and the entire AI buildout priced through it. That is what the SOX is for.</p>
-<h2>The benchmark, this week</h2><p>The PHLX Semiconductor Sector Index — SOX to everyone who trades it — is the chip economy's scoreboard: 30 of the largest U.S.-traded companies designing, distributing, manufacturing, and selling semiconductors, capitalization-weighted, run by Nasdaq since its acquisition of the Philadelphia Stock Exchange. It began on December 1, 1993 at a base value of 200.00 and split two-for-one on July 24, 1995. What it measures has changed beyond recognition since — from PC-era chipmakers to the foundries, equipment makers, and accelerator designers that the AI buildout runs on — while the methodology has stayed deliberately boring, which is exactly what a benchmark is supposed to do.</p><div class="fig"><div class="lbl">PHLX Semiconductor Index (SOX), data as of Oct 30, 2026</div><b>10,688.80</b><div><span class="trend down">▼ Down 829.40 points (−7.20%) on the day</span></div><div class="prior">Prior close (Oct 29, 2026): 11,518.20; day high 10,957.32, day low 10,439.01. Prior staged figure (Oct 23, 2026): 10,779.46 — down 90.66 (−0.84%) since then.</div><div class="src">Nasdaq SOX index history page — <a href="https://indexes.nasdaqomx.com/index/History/SOX">source</a></div></div><div class="fig"><div class="lbl">SOX 1-year return (as of Oct 23, 2026)</div><b>+50.38%</b><div><span class="trend flat">● Baseline (October 2026) — trend tracking starts with the next refresh</span></div><div class="prior">No prior-period 1-year return from the same page was captured this session.</div><div class="src">Nasdaq SOX index history page — <a href="https://indexes.nasdaqomx.com/index/History/SOX">source</a></div></div><h2>What sits inside the number</h2><p>The Nasdaq factsheet as of June 30, 2026 shows how concentrated the benchmark has become. NVIDIA alone carries a 10.34% weight, Micron 8.65%, and Broadcom 7.69%; the top ten names together account for well over half the index. Applied Materials (5.84%), KLA (5.71%), Marvell (5.29%), Lam Research (4.95%), ASML (4.49%), Intel (4.43%), and TSMC (4.15%) complete the top ten. That concentration is the trade: SOX is less a diversified sector bet than a leveraged view on a handful of companies' ability to keep converting AI demand into earnings, and its swings — including the factsheet's reported year-to-date return of 101.14% for its period — reflect that leverage in both directions.</p><table class="data"><tr><th>Top 10 components (factsheet, June 30, 2026)</th><th>Weight</th></tr><tr><td>NVIDIA (NVDA)</td><td>10.34%</td></tr><tr><td>Micron Technology (MU)</td><td>8.65%</td></tr><tr><td>Broadcom (AVGO)</td><td>7.69%</td></tr><tr><td>Applied Materials (AMAT)</td><td>5.84%</td></tr><tr><td>KLA (KLAC)</td><td>5.71%</td></tr><tr><td>Marvell (MRVL)</td><td>5.29%</td></tr><tr><td>Lam Research (LRCX)</td><td>4.95%</td></tr><tr><td>ASML</td><td>4.49%</td></tr><tr><td>Intel (INTC)</td><td>4.43%</td></tr><tr><td>TSMC</td><td>4.15%</td></tr></table><p class="src">Source: Nasdaq SOX factsheet — <a href="https://indexes.nasdaqomx.com/docs/FS_SOX.pdf">source</a></p><p>The counterweight to any index enthusiasm is mechanical: SOX rebalances and reconstitutes, capping its largest constituents, so today's weights are a snapshot that the methodology will revise. A benchmark that never changed would stop describing its sector; a benchmark that changes constantly would stop being comparable. SOX threads that needle annually, and the page will track the weights each time the factsheet updates.</p>
-<div class="note"><strong>Methodology.</strong> Figures below come only from the named public sources linked beside each figure. Where a source publishes a prior-period figure from the same series, the trend indicator compares against it. Where it does not, the figure is labelled as an October 2026 baseline and trend tracking starts with the next refresh. No proprietary dataset is reproduced in full: figures are summarized with attribution, and ranges are reported as published. Paywalled tables and login-gated data are excluded.</div>
-<div class="note"><strong>Disclaimer.</strong> These are aggregated public estimates for information only. They are not investment, financial, legal, or professional advice, and they are not a quote for any service. Verify current figures with the original source before acting on them.</div>
-<div class="note"><strong>Freshness.</strong> This page is refreshed on its stated cadence (see SOURCES.md) and only when new or changed figures are available. A refresh never changes only the date. The site sitemap's lastmod entry for this page is updated on every refresh once the page is deployed.</div>
-<section class="changelog"><h2>Changelog</h2><ul>
-<li><strong>October 2026:</strong> First edition. Figures compiled from the public sources listed below; trend baselines set where no prior-period figure was published by the same source.</li>
-<li><strong>October 31, 2026:</strong> SOX level updated to the Oct 30, 2026 close of 10,688.80 (down 7.20% on the day, down 0.84% vs the Oct 23 staged figure). 1-year return and factsheet weights unchanged — no newer values published.</li>
-</ul></section>
-<h2>Sources</h2>
-<ul><li>Nasdaq SOX index history page — <a href="https://indexes.nasdaqomx.com/index/History/SOX">https://indexes.nasdaqomx.com/index/History/SOX</a></li><li>Nasdaq SOX factsheet (PDF) — <a href="https://indexes.nasdaqomx.com/docs/FS_SOX.pdf">https://indexes.nasdaqomx.com/docs/FS_SOX.pdf</a></li></ul>
-<div class="cta-row">
-<a href="https://www.afternic.com/domain/semiconductorindex.com">Buy semiconductorindex.com — $9,888</a>
-<a href="mailto:info@primedomaincapital.com">Contact: info@primedomaincapital.com</a>
-</div>
-<p><a href="https://semiconductorindex.com/">Back to semiconductorindex.com</a></p>
-</main>
-<footer><p>OFFERED BY <strong>PRIME DOMAIN CAPITAL</strong> · PRIVATE HOLDER OF CATEGORY-DEFINING .COM DOMAINS</p><p style="margin-top:10px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
-<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script><!-- End Cloudflare Web Analytics -->
+<nav><div class="brand">SEMICONDUCTOR<b>INDEX</b>.COM</div><a class="cta" href="/">BACK TO HOME</a></nav>
+<header class="hero"><video class="hero-video" autoplay muted loop playsinline><source src="video/hero.mp4" type="video/mp4"></video><div class="hero-shade"></div><div class="hero-inner"><div class="tag">MARKET DATA · LAST UPDATED NOVEMBER 9, 2026</div><h1>Semiconductor index values, <span class="cu">not chip-stock hype.</span></h1><p class="lede">The PHLX Semiconductor Index (SOX) is the benchmark for the chip sector. This page tracks its level, its returns, and its component weights — updated weekly from Nasdaq published index data.</p><div class="buybar"><div class="price">9,390.25<span>SOX · NOV 6, 2026</span></div><a class="btn" href="#data">SEE THE DATA ↓</a></div></div></header>
+<div class="ticker"><span>SOX <b>9,390.25</b> ▲ 4.21% &nbsp;·&nbsp; 1-YEAR <b>+31.20%</b> &nbsp;·&nbsp; TOP WEIGHT <b>NVDA 11.35%</b> &nbsp;·&nbsp; 30 STOCKS &nbsp;·&nbsp; AS OF NOV 6, 2026</span></div>
+<section id="data"><div class="k">AT A GLANCE</div><h2>The SOX, <span class="cu">at a glance.</span></h2><p class="sub">The figures below are the latest staged values on this page. The weekly snapshot is updated every Monday from Nasdaq's published SOX history.</p><div class="grid"><div class="card"><h3>SOX level</h3><div class="n">9,390.25</div><p>As of Nov 6, 2026, the SOX closed at 9,390.25, up 379.11 points (+4.21%) on the day. The prior close (Thu Nov 5, 2026) was 9,011.14. The week was sharply lower: the index fell 1,298.55 points (−12.15%) from the Oct 30 close of 10,688.80, after a 12.25% drop on Nov 5 — the biggest one-day drop since March 2020.</p></div><div class="card"><h3>Top weight</h3><div class="n">NVDA <small>11.35%</small></div><p>NVIDIA is the largest single weight in the SOX factsheet as of September 30, 2026. At 11.35% of the index, it is followed by Broadcom (8.67%) and Micron (8.13%).</p></div><div class="card"><h3>1-year return</h3><div class="n">+31.20%</div><p>The SOX 1-year return at the Nov 6, 2026 close is +31.20%, per WalletInvestor — down from +50.38% as of Oct 23, 2026.</p></div><div class="card"><h3>Factsheet 1-year return</h3><div class="n">98.26%</div><p>Factsheet data is as of September 30, 2026. The 1-year return was 98.26%, and the 2026 year-to-date return was 78.29%.</p></div></div></section>
+<section><div class="k">WHAT IT IS</div><h2>What the <span class="cu">SOX is.</span></h2><p class="sub">The PHLX Semiconductor Index (SOX) tracks 30 of the largest U.S.-listed semiconductor companies, weighted by market capitalization. It is the benchmark that chip ETFs, futures, and options are built on — and the cleanest single number for the health of the chip sector.</p><p class="sub">It began on December 1, 1993 at a base value of 200.00. It is calculated and published by Nasdaq, and it is rebalanced quarterly in March, June, September, and December, and reconstituted annually in September.</p></section>
+<section><div class="k">THE DATA</div><h2>How the SOX <span class="cu">is built.</span></h2><p class="sub">The factsheet weights below are as of September 30, 2026; the index is rebalanced quarterly in March, June, September, and December, and reconstituted annually in September. Nasdaq applies a modified market-capitalization weighting with caps, so no single name can dominate the index outright — but the largest names still carry real weight.</p><div class="fig"><div class="lbl">PHLX Semiconductor Index (SOX), data as of Nov 6, 2026</div><b>9,390.25</b><div><span class="trend up">▲ Up 379.11 points (+4.21%) on the day</span></div><div class="prior">Prior close (Thu Nov 5, 2026): 9,011.14; day high 9,627.26, day low 9,221.35 (day high/low: WalletInvestor). Week-on-week: Oct 30 close 10,688.80 → Nov 6 close 9,390.25, down 1,298.55 (−12.15%). Note the Nov 5 session fell 12.25%, the biggest one-day drop since March 2020. Prior staged figure (Oct 30, 2026): 10,688.80.</div><div class="src">Nasdaq SOX index history page — <a href="https://indexes.nasdaqomx.com/index/History/SOX">source</a></div></div><div class="fig"><div class="lbl">SOX 1-year return at the Nov 6, 2026 close (as of Nov 6, 2026)</div><b>+31.20%</b><div><span class="trend down">▼ Down from +50.38% (as of Oct 23, 2026)</span></div><div class="prior">Prior 1-year return (as of Oct 23, 2026): +50.38%.</div><div class="src">WalletInvestor</div></div><p>The Nasdaq factsheet as of September 30, 2026 shows how concentrated the SOX is. NVIDIA alone carries an 11.35% weight, Broadcom 8.67%, and Micron 8.13%, followed by Intel (4.91%), Advanced Micro Devices (4.75%), Marvell (4.57%), Applied Materials (4.08%), KLA (4.06%), TSMC (4.02%), and Analog Devices (4.01%). Advanced Micro Devices and Analog Devices enter the top ten in this factsheet, replacing ASML and Lam Research. That concentration is the trade: the SOX is effectively a bet on a small set of large, cyclical technology companies, and its swings — including the factsheet's reported 1-year return of 98.26% and calendar-2026 year-to-date return of 78.29% as of September 30, 2026 — reflect that leverage in both directions.</p><table><tr><th>Top 10 components (factsheet, September 30, 2026)</th><th class="num">Weight</th></tr><tr><td>NVIDIA (NVDA)</td><td class="num">11.35%</td></tr><tr><td>Broadcom (AVGO)</td><td class="num">8.67%</td></tr><tr><td>Micron Technology (MU)</td><td class="num">8.13%</td></tr><tr><td>Intel (INTC)</td><td class="num">4.91%</td></tr><tr><td>Advanced Micro Devices (AMD)</td><td class="num">4.75%</td></tr><tr><td>Marvell (MRVL)</td><td class="num">4.57%</td></tr><tr><td>Applied Materials (AMAT)</td><td class="num">4.08%</td></tr><tr><td>KLA (KLAC)</td><td class="num">4.06%</td></tr><tr><td>TSMC</td><td class="num">4.02%</td></tr><tr><td>Analog Devices (ADI)</td><td class="num">4.01%</td></tr></table><table><tr><th>Factsheet return (as of September 30, 2026)</th><th class="num">Return</th></tr><tr><td>1-year return (PR)</td><td class="num">98.26%</td></tr><tr><td>Calendar-2026 year-to-date</td><td class="num">78.29%</td></tr><tr><td>2025</td><td class="num">42.23%</td></tr><tr><td>September 2026</td><td class="num">+9.48%</td></tr><tr><td>Q3 2026</td><td class="num">−11.36%</td></tr><tr><td>Q2 2026</td><td class="num">+87.75%</td></tr><tr><td>Q1 2026</td><td class="num">+7.13%</td></tr><tr><td>1-year annualised volatility</td><td class="num">45.42%</td></tr></table><p class="note">Factsheet figures are as of September 30, 2026 and are shown separately from the November 6, 2026 index close above; do not mix the two as-of dates.</p></section>
+<section><div class="k">SOURCES &amp; CHANGELOG</div><h2>Sources, <span class="cu">and what's changed.</span></h2><p class="sub">SOX levels and returns come from Nasdaq's published SOX history and factsheet, with the 1-year return and the day high/low from WalletInvestor. Index values change daily; check the linked sources for the latest figures.</p><p class="note">Sources: <a href="https://indexes.nasdaqomx.com/index/History/SOX">Nasdaq SOX history</a> · <a href="https://indexes.nasdaqomx.com/docs/FS_SOX.pdf">Nasdaq SOX factsheet (PDF)</a></p><ul class="changelog"><li><b>November 9, 2026:</b> SOX updated to the Nov 6, 2026 close of 9,390.25 (up 4.21% on the day; down 12.15% on the week after a 12.25% drop on Nov 5); 1-year return +31.20%; factsheet updated to Sep 30, 2026 (NVDA 11.35%, AVGO 8.67%, MU 8.13%; AMD and ADI enter the top 10).</li><li><b>October 31, 2026:</b> SOX updated to the Oct 30, 2026 close of 10,688.80 (down 7.20% on the day; down 0.84% on the week); 1-year return +50.38%; factsheet updated to Jun 30, 2026 (NVDA 10.34%, MU 8.65%, AVGO 7.69%).</li></ul></section>
+<footer>SemiconductorIndex.com is an independent publication by Prime Domain Capital. It is not affiliated with Nasdaq or the Philadelphia Stock Exchange, and it is not investment advice. Past performance does not guarantee future results.<br>© 2026 Prime Domain Capital · <a href="/">semiconductorindex.com</a></footer>
 </body>
 </html>
