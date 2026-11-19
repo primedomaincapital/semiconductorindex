@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Are Semiconductor Indices Actually Built? - semiconductorindex.com Insights</title>
+<meta name="description" content="Nvidia is 35.75% of the chip market by value — and 12% of the PHLX. How the SOX's caps, its annual rebuild, and rival rulebooks at VanEck and iShares change what a semiconductor index actually measures.">
+<link rel="canonical" href="https://semiconductorindex.com/insights/article6">
+<meta property="og:title" content="How Are Semiconductor Indices Actually Built?">
+<meta property="og:description" content="Nvidia is 35.75% of the chip market by value — and 12% of the PHLX. How the SOX's caps, its annual rebuild, and rival rulebooks at VanEck and iShares change what a semiconductor index actually measures.">
+<meta property="og:url" content="https://semiconductorindex.com/insights/article6">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Are Semiconductor Indices Actually Built?","description":"Nvidia is 35.75% of the chip market by value — and 12% of the PHLX. How the SOX's caps, its annual rebuild, and rival rulebooks at VanEck and iShares change what a semiconductor index actually measures.","author":{"@type":"Organization","name":"Prime Domain Capital"},"publisher":{"@type":"Organization","name":"Prime Domain Capital"},"datePublished":"2026-11-19","mainEntityOfPage":"https://semiconductorindex.com/insights/article6"}</script>
+<style>
+:root{--bg:#0c0d10;--bg2:#14161b;--cu:#c87533;--cu2:#e8a05c;--si:#d7dce3;--mut:#8b9099;--line:#2a2d34}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--si);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 44px;background:rgba(12,13,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em}
+nav .brand b{color:var(--cu)}
+nav a.cta{font-family:'IBM Plex Mono',monospace;background:var(--cu);color:#0c0d10;text-decoration:none;padding:11px 26px;font-size:13px;font-weight:600;transition:.25s}
+nav a.cta:hover{background:var(--cu2)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../images/hero.jpg') center/cover;opacity:.3}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 20%,transparent 65%)}
+#pulse{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;padding:130px 44px 80px;max-width:1240px}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--cu);border:1px solid var(--cu);padding:9px 18px;margin-bottom:30px}
+h1{font-size:clamp(42px,6.8vw,92px);font-weight:700;line-height:1.03;letter-spacing:-.015em;max-width:880px;margin-bottom:26px}
+h1 .cu{color:var(--cu2)}
+.lede{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:660px;line-height:1.7;margin-bottom:44px}
+.buybar{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.price{font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600}
+.price span{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--mut);font-weight:400;margin-top:6px}
+.btn{font-family:'IBM Plex Mono',monospace;display:inline-block;background:var(--cu);color:#0c0d10;text-decoration:none;padding:18px 48px;font-weight:600;font-size:15px;transition:.25s}
+.btn:hover{background:var(--cu2);transform:translateY(-2px)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--bg2)}
+.ticker span{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--mut);letter-spacing:.08em;padding:0 34px}
+.ticker b{color:var(--cu2)}
+section{padding:104px 44px;max-width:1240px;margin:0 auto}
+.k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--cu);margin-bottom:20px}
+h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;letter-spacing:-.01em;margin-bottom:24px;max-width:800px}
+.body{color:var(--mut);font-size:17.5px;line-height:1.85;max-width:700px}
+.body strong{color:var(--si)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:54px}
+.grid2 img{width:100%;border:1px solid var(--line)}
+.spec{font-family:'IBM Plex Mono',monospace;background:var(--bg2);border:1px solid var(--line);padding:34px;font-size:14px;line-height:2;color:var(--mut)}
+.spec b{color:var(--cu2)}
+.spec .row{display:flex;justify-content:space-between;border-bottom:1px dashed #2a2d34;padding:8px 0}
+.spec .row:last-child{border:none}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:60px}
+.metric{background:var(--bg2);padding:44px 28px}
+.metric .v{font-family:'IBM Plex Mono',monospace;font-size:40px;color:var(--cu2);font-weight:600}
+.metric .d{color:var(--mut);font-size:13.5px;margin-top:12px;line-height:1.6}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.shots img{width:100%;height:300px;object-fit:cover;border:1px solid var(--line);transition:.5s;filter:saturate(.85)}
+.shots img:hover{filter:saturate(1.15);transform:scale(1.02)}
+.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:54px}
+.target{border:1px solid var(--line);padding:38px 30px;background:var(--bg2);transition:.3s}
+.target:hover{border-color:var(--cu)}
+.target h3{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--cu2);margin-bottom:14px}
+.target p{color:var(--mut);font-size:14.5px;line-height:1.75}
+.close{border:1px solid var(--cu);text-align:center;padding:90px 36px;margin-top:36px;background:linear-gradient(rgba(200,117,51,.07),transparent)}
+.close .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,3.6vw,40px);color:var(--cu2);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:54px 44px;text-align:center;color:var(--mut);font-size:13.5px;font-family:'IBM Plex Mono',monospace}
+footer a{color:var(--cu2);text-decoration:none}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.grid2,.targets,.shots{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}section,.hero-inner{padding-left:22px;padding-right:22px}nav{padding:14px 18px}}
+
+
+.article-hero{padding:150px 44px 26px;max-width:1240px;margin:0 auto}
+.article-hero h1{font-size:clamp(34px,5vw,62px);font-weight:700;line-height:1.06;letter-spacing:-.015em;max-width:900px;margin-bottom:0}
+.article-hero .ameta{margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--mut)}
+.article-hero .ameta b{color:var(--cu);font-weight:600}
+nav .brand a{color:inherit;text-decoration:none}
+.article-body{max-width:720px;margin:0 auto;padding:26px 44px 20px;font-size:1.05rem;line-height:1.75;color:var(--mut)}
+.article-body h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.01em;color:var(--si);margin:58px 0 22px}
+.article-body p{margin-bottom:24px}
+.article-body strong{color:var(--si)}
+.article-body .pull{font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.45;color:var(--cu2);border-left:3px solid var(--cu);padding-left:30px;margin:54px 0}
+.domain-cta{max-width:720px;margin:60px auto;padding:46px 42px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--cu);font-family:'IBM Plex Mono',monospace}
+.domain-cta p{font-size:15px;line-height:1.8;color:var(--mut);margin-bottom:26px}
+.domain-cta p b{color:var(--cu2)}
+
+@media(max-width:900px){.article-hero,.article-body{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+<nav><div class="brand"><a href="../index.html">PDC<b>/</b>INDEX</a></div><a class="cta" href="https://www.afternic.com/domain/semiconductorindex.com">BUY $9,888</a></nav>
+
+<header class="article-hero reveal">
+<div class="k">INSIGHTS</div>
+<h1>How Are Semiconductor Indices Actually Built?</h1>
+<div class="ameta"><b>INDEX METHODOLOGY</b>  ·  9 MIN READ</div>
+</header>
+
+<article class="article-body reveal">
+<p>On October 27, 2026, Nvidia was worth about $5.25 trillion — 35.75 percent of the combined market value of the 30 companies in the PHLX Semiconductor Index. In the index itself, Nvidia counted for 12 percent. That gap, between what the market is and what the index says it is, is not an error. It is the design. Every semiconductor index is a set of choices about who counts, how much they count, and when the list gets rewritten — and those choices decide what the number on the screen actually measures.</p>
+<p>The PHLX Semiconductor Sector Index, known by its ticker SOX, is the oldest and most quoted of these benchmarks. It was launched on December 1, 1993, with a base value of 200, and it split two-for-one in July 1995. Nasdaq maintains it today. Its job, as Nasdaq's methodology document puts it, is to measure the performance of the 30 largest US-listed semiconductor companies. That sentence sounds simple. The rulebook behind it runs to pages of eligibility tests, caps, and calendar dates — and each rule leaves a fingerprint on the returns.</p>
+<h2>Thirty names and a $100 million floor</h2>
+<p>Getting into the SOX takes more than size. A company must be listed on a major US exchange — Nasdaq, the New York Stock Exchange, NYSE American, or CBOE — and classified under the Industry Classification Benchmark as semiconductors or semiconductor production equipment. It needs a minimum market capitalization of $100 million, at least 1.5 million shares traded in each of the prior six months, and at least three months of trading history. It must have listed US options or meet an alternate liquidity test, and it cannot be in bankruptcy proceedings. American Depositary Receipts qualify, which is how Taiwan Semiconductor and ASML, a Dutch company, hold seats in an index of US-listed stocks — though for ADRs the index counts only the shares on deposit with the US depositary bank, so a foreign company can enter at less than its full global market value.</p>
+<p>The list itself is rebuilt once a year. Reconstitution happens at market open on the first trading day after the third Friday in September, based on market data from the end of July. Thirty names go in; the rest of the industry stays out. That annual rhythm matters more than it looks. A company that doubles between October and June still waits for September to join, and a company that collapses in the spring keeps its seat until the autumn. In a sector where a single product cycle can remake a company's fortunes in two quarters, the index is always, by construction, a few months behind the story.</p>
+<p>The weights are a different matter. They reset every quarter — effective at market open on the first trading day after the third Friday in March, June, September, and December — and they follow a modified market-capitalization scheme with hard caps. The three largest index securities may weigh no more than 12, 10, and 8 percent respectively. Every other member is capped at 4 percent. Excess weight is redistributed proportionally to the smaller members, iteratively, until every name sits at or below its cap. The index is calculated and disseminated in real time, every second, from 9:30:01 a.m. to 5:16 p.m. Eastern.</p>
+<h2>The caps that change the answer</h2>
+<p>Apply those caps to the October 27 closes and the distortion becomes concrete. Nvidia's 35.75 percent of the members' aggregate market value — $5.25 trillion of $14.69 trillion — became 12 percent in the index. TSMC's 15.42 percent became 10 percent. Broadcom's 11.12 percent became 8 percent. Fifteen of the thirty members, each worth between 0.10 and 0.44 percent of the aggregate, were lifted to weights between 0.62 and 2.71 percent. The SOX that investors quote every morning is not the chip industry weighted by value. It is the chip industry weighted by value, then flattened — the giants cut down to size, the small names boosted several times over.</p>
+<p>That flattening has a cost and a benefit, and both showed up in 2026. The benefit is survival: when Nvidia fell 9.26 percent on November 5, closing at $181.60, a pure market-cap index would have taken nearly the full hit on its largest line. The SOX fell 12.25 percent that day anyway — caps cannot save an index when the whole sector sells off — but on the many days when one giant moves and the rest do not, the caps keep a single earnings report from becoming the index's story. The cost is representation. In the year Gartner expects global semiconductor revenue to reach $1,555.2 billion, up 92 percent from $809 billion in 2025, with memory alone at $837.3 billion — 54 percent of the total, up from 27 percent a year earlier — an index that caps its largest members at 12 percent is, by design, underweight the very concentration that defines the industry. The SOX measures the sector as a committee of thirty. The market itself is closer to an oligarchy with a long tail.</p>
+<h2>The rival rulebooks</h2>
+<p>The SOX is not the only rulebook, and the rivals disagree with it in instructive ways. The VanEck Semiconductor ETF, SMH, tracks the MVIS US Listed Semiconductor 25 Index: 25 companies, chosen from the 50 largest US-listed chip companies, with a revenue test the SOX does not have. A company must earn at least 50 percent of its revenue from semiconductors or semiconductor equipment to enter, and at least 25 percent to stay. The index is reconstituted twice a year, in March and September, rebalanced quarterly, and its single-name cap is 20 percent — loose enough that Nvidia was 20.06 percent of SMH on October 15, 2026, with the top ten holdings at about 70 percent of the fund. As of June 30, 2026, Nvidia was about 17.5 percent of SMH, TSMC about 9.3 percent, and roughly 82 percent of assets were in US companies.</p>
+<p>The iShares Semiconductor ETF, SOXX, follows yet another book. It tracked the SOX until June 20, 2021, and has tracked the NYSE Semiconductor Index since. That index holds 30 names with an 8 percent cap on every stock and a 10 percent aggregate cap on all depositary receipts combined — a rule with a visible consequence. On November 5, 2026, TSMC was 3.36 percent of SOXX, against 9.72 percent in SMH on October 22, because the ADR cap, not TSMC's size, set the weight. The Invesco PHLX Semiconductor ETF, SOXQ, is the purist of the three: it tracks the SOX itself, with the 12-10-8-4 caps intact. The fees tell you how the issuers price the difference: SOXQ charges 0.19 percent a year, SOXX 0.33 percent, SMH 0.35 percent. Assets tell you what investors chose: as of November 13, 2026, SMH held about $77.20 billion and SOXX about $47.82 billion, while SOXQ held about $3.0 billion at the end of August. The most concentrated rulebook, not the original index, drew the most money.</p>
+<p>These are not trivial differences. From December 31, 2025 to October 30, 2026, on prices adjusted for dividends and splits, SOXX rose 56.8 percent, SOXQ 51.2 percent, and SMH 45.1 percent. Three funds, all sold as "semiconductor exposure," finished a ten-month stretch more than eleven points apart — because one caps every name at 8 percent, one lets Nvidia run to 20 percent, and one rebuilds its list on a different calendar. The label on the fund is marketing. The rulebook is the product.</p>
+<h2>The counterargument: let the biggest stock run</h2>
+<p>There is a serious case against caps, and it starts with honesty about what an index is for. A market-capitalization index is supposed to answer a plain question: what is this market worth, and how did it move? Capping Nvidia at 12 percent when the market says 35.75 percent does not answer that question; it answers a different one, about how a diversified portfolio of chip stocks performed. The distinction matters because the semiconductor industry in 2026 is concentrated for real economic reasons, not accidents of the stock market. Gartner expects the AI data-center ecosystem to grow from 36.5 percent of semiconductor revenue in 2026 to more than 53 percent by 2030. The companies that supply that ecosystem — Nvidia's accelerators, TSMC's leading-edge fabs, SK hynix's high-bandwidth memory — are where the revenue actually sits. An index that trims them back to committee size understates the shift it exists to measure.</p>
+<p>The caps also create their own distortions. Between quarterly rebalances, weights drift with prices, so a stock can sit above its cap for weeks; the discipline is periodic, not continuous. And the redistribution rule quietly hands extra weight to the smallest members — companies whose fortunes may have nothing to do with the forces moving the sector. Equal weighting would at least be honest about that choice. The SOX's modified scheme is a compromise that pleases nobody completely: too concentrated for a diversification purist, too diluted for a market realist.</p>
+<p>None of this makes the SOX a bad index. It makes it a specific one — a benchmark built in 1993, when no chip company was worth $5 trillion and the idea of a single stock at a third of the sector would have sounded absurd, maintained by rules that assume concentration is a risk to be managed rather than a fact to be reported. Every rival rulebook makes the opposite bet somewhere: SMH bets that revenue purity and a 20 percent cap track the real economy better; the NYSE index bets that an 8 percent ceiling and an ADR limit keep the benchmark investable. All three cannot be right about what "the semiconductor market" means. Each is right about what its own rules measure.</p>
+<h2>What this means for anyone watching the index</h2>
+<p>The practical lesson is narrow and worth stating plainly. Before comparing two chip funds, or blaming one for trailing another, read the rulebook: how many names, what cap, what revenue test, what calendar. A fund that "beat the index" may simply have followed a different one. Before treating the SOX as the voice of the chip industry, remember what it leaves out — private companies, Chinese foundries, the physical chip market itself — and what it trims back. The index is a measuring instrument, and like any instrument it has a calibration. In 2026, when one company is more than a third of the market by value and memory alone is more than half of industry revenue, the calibration is the story. The next time the SOX moves 12 percent in a day, the first question should not be what happened to chips. It should be what the index was built to count — and whether that is still the thing you wanted to measure.</p>
+<p><em>The definitive source for semiconductor index intelligence is still up for grabs. SemiconductorIndex.com is available for acquisition by the company that will own this category — inquiries to info@primedomaincapital.com.</em></p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://indexes.nasdaqomx.com/docs/Methodology_SOX.pdf">PHLX Semiconductor Sector Index Methodology</a> — Nasdaq</li>
+<li><a href="https://pacifictape.com/explainers/sox-heatmap-explained/">SOX Heatmap Explained: How to Read the US Chip Index Map</a> — Pacific Tape (data as of Oct 27, 2026)</li>
+<li><a href="https://pacifictape.com/explainers/soxx-vs-smh-vs-soxq-chip-etfs/">SOXX vs SMH vs SOXQ: Semiconductor ETFs Compared</a> — Pacific Tape (data as of Oct 23–30, 2026)</li>
+<li><a href="https://www.gartner.com/en/newsroom/press-releases/2026-08-24-gartner-forecasts-worldwide-semiconductor-revenue-to-reach-1-trillion-dollars-in-2026">Gartner Forecasts Worldwide Semiconductor Revenue to Reach $1.6 Trillion in 2026</a> — Gartner, Aug 24, 2026</li>
+<li><a href="https://www.fourpercentrule.com/etfs/top/technology-etfs">Top Technology ETFs: The 10 Best Performers Over the Past Year</a> — Four Percent Rule (data as of Nov 13, 2026)</li>
+</ul>
+</article>
+
+<div class="domain-cta reveal"><p><b>NEXT INSIGHT</b> — Chip Stocks vs. the Index: What Active Semiconductor Managers Actually Beat</p><a class="btn" href="article7.html">READ NEXT →</a></div>
+
+<div class="domain-cta reveal"><p>SemiconductorIndex.com is available for acquisition by index providers, ETF issuers, and financial institutions building semiconductor benchmarks.</p><a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">Buy Now — $9,888</a></div>
+
+<section class="reveal">
+<div class="close">
+<div class="k">04 / ACQUISITION</div>
+<div class="domain">semiconductorindex.com</div>
+<a class="btn" href="https://www.afternic.com/domain/semiconductorindex.com">BUY NOW — $9,888</a>
+</div>
+</section>
+
+<footer><p>OFFERED BY <strong>PRIME DOMAIN CAPITAL</strong> · PRIVATE HOLDER OF CATEGORY-DEFINING .COM DOMAINS</p><p style="margin-top:10px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
